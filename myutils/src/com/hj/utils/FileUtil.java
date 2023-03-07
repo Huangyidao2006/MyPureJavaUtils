@@ -307,7 +307,7 @@ public class FileUtil {
         File[] subFiles = file.listFiles(new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                if (suffixes == null || suffixes.isEmpty()) {
+                if (suffixes == null || suffixes.isEmpty() || pathname.isDirectory()) {
                     return true;
                 }
 
